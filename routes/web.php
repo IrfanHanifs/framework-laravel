@@ -6,13 +6,11 @@ Route::get('/', function () {
     return redirect()->route('tabungan.index');
 });
 
-// Route resource untuk CRUD tabungan
-// Ini akan membuat 7 route sekaligus:
-// GET /tabungan -> index (daftar)
-// GET /tabungan/create -> create (form tambah)
-// POST /tabungan -> store (simpan data baru)
-// GET /tabungan/{id} -> show (detail)
-// GET /tabungan/{id}/edit -> edit (form edit)
-// PUT/PATCH /tabungan/{id} -> update (update data)
-// DELETE /tabungan/{id} -> destroy (hapus data)
-Route::resource('tabungan', TabunganController::class);
+// Route untuk CRUD tabungan
+Route::get('/tabungan', [TabunganController::class, 'index'])->name('tabungan.index');
+Route::get('/tabungan/create', [TabunganController::class, 'create'])->name('tabungan.create');
+Route::post('/tabungan', [TabunganController::class, 'store'])->name('tabungan.store');
+Route::get('/tabungan/{tabungan}', [TabunganController::class, 'show'])->name('tabungan.show');
+Route::get('/tabungan/{tabungan}/edit', [TabunganController::class, 'edit'])->name('tabungan.edit');
+Route::put('/tabungan/{tabungan}', [TabunganController::class, 'update'])->name('tabungan.update');
+Route::delete('/tabungan/{tabungan}', [TabunganController::class, 'destroy'])->name('tabungan.destroy');

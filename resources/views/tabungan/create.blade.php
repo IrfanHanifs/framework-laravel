@@ -12,17 +12,17 @@
                 </h4>
             </div>
             <div class="card-body">
-                <!-- Informasi Total Tabungan -->
+                {{-- Informasi Total Tabungan  --}}
                 <div class="alert alert-info mb-4">
                     <strong>Total Tabungan Saat Ini:</strong> 
                     Rp {{ number_format($totalTabungan, 0, ',', '.') }}
                 </div>
 
-                <!-- Form Tambah Tabungan -->
+                {{-- Form Tambah Tabungan --}}
                 <form action="{{ route('tabungan.store') }}" method="POST">
                     @csrf
 
-                    <!-- Nama Penabung -->
+                    {{-- Nama Penabung --}}
                     <div class="mb-3">
                         <label for="nama_penabung" class="form-label">
                             <i class="fas fa-user"></i> Nama Penabung
@@ -38,7 +38,7 @@
                         @enderror
                     </div>
 
-                    <!-- Jumlah Tabungan -->
+                    {{-- Jumlah Tabungan  --}}
                     <div class="mb-3">
                         <label for="jumlah" class="form-label">
                             <i class="fas fa-money-bill-wave"></i> Jumlah Tabungan
@@ -72,7 +72,7 @@
                         @enderror
                     </div>
 
-                    <!-- Keterangan -->
+                    {{-- Keterangan --}}
                     <div class="mb-3">
                         <label for="keterangan" class="form-label">
                             <i class="fas fa-sticky-note"></i> Keterangan
@@ -86,7 +86,7 @@
                         @enderror
                     </div>
 
-                    <!-- Tombol Aksi -->
+                    {{-- Tombol simpan & batal --}}
                     <div class="d-flex gap-2">
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-save"></i> Simpan

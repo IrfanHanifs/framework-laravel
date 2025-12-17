@@ -36,7 +36,7 @@
                         <strong>Tanggal:</strong>
                     </div>
                     <div class="col-md-8">
-                        {{ $tabungan->tanggal->format('d/m/Y') }}
+                        {{ $tabungan->tanggal ? $tabungan->tanggal->format('d/m/Y') : '-' }}
                     </div>
                 </div>
 
